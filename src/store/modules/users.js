@@ -1,10 +1,11 @@
-import { actions } from "../actions/users";
-import { mutations } from "../mutations/users";
-
+import actions from '../actions/users';
+import mutations from '../mutations/users';
 
 // initial state
 const state = {
-  all: []
+  all: [],
+  loading: false,
+  hasError: false
 };
 
 // getters
