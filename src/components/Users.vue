@@ -32,15 +32,17 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Users',
-  computed: mapState({
-    users: state => state.users.all
-  }),
+  computed: {
+    ...mapGetters([
+      'users'
+    ])
+  },
   created () {
-    this.$store.dispatch('users/getUsers');
+    this.$store.dispatch('getUsers');
   }
 }
 </script>

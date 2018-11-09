@@ -1,8 +1,12 @@
-import { SET_USERS, GET_USERS_ERROR, GET_USERS } from '../mutations/mutation-types';
-import { fetchUsers } from '../../api/UsersAPI';
+import {
+  SET_USERS,
+  GET_USERS_ERROR,
+  GET_USERS
+} from './mutation-types';
+import { fetchUsers } from '../../../api/UsersAPI';
 
 export default {
-  getUsers: async ({ commit }) => {
+  async getUsers ({ commit }) {
     commit(GET_USERS);
     try {
       const { status, data } = await fetchUsers();
