@@ -1,8 +1,10 @@
 <template>
   <div class="users-data">
-    <h1>
-      Users Data
-    </h1>
+    <el-button
+      type="success"
+      @click="getUsers">
+      Fetch Data
+    </el-button>
     <el-table
       :data="users"
       stripe
@@ -41,8 +43,10 @@ export default {
       'users'
     ])
   },
-  created () {
-    this.$store.dispatch('getUsers');
+  methods: {
+    ...mapActions([
+      'getUsers'
+    ])
   }
 }
 </script>
